@@ -14,6 +14,14 @@ public class Main {
         m.addSerializer(Student.class,new StudentSerializer());
         om.registerModule(m);
         System.out.println(om.writeValueAsString(s));
+        String json="{\"firstName\":\"John\",\"lastName\":\"doe\",\"birthday\":\"10-авг-1970\"}";
+        ObjectMapper n=new ObjectMapper();
+        SimpleModule m1=new SimpleModule();
+        m1.addDeserializer(Student.class,new StudentDeserializer());
+        n.registerModule(m1);
+        Student s1=n.readValue(json,Student.class);
+        System.out.println(s1);
+
 
     }
 }

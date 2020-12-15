@@ -1,7 +1,5 @@
 package com.serializer;
-
 import java.time.LocalDate;
-
 public class Student {
     String firstName;
     String lastName;
